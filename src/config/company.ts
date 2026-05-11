@@ -10,6 +10,15 @@ export const companyInfo = {
     weekdays: "Senin - Jumat: 08.00 - 17.00",
     saturday: "Sabtu: 08.00 - 12.00",
   },
+  footerLinks: [
+    { href: "/", label: "Beranda" },
+    { href: "/about", label: "Tentang Kami" },
+    { href: "/pengadaan", label: "Pengadaan" },
+    { href: "/konstruksi", label: "Konstruksi" },
+    { href: "/travel", label: "Travel" },
+    { href: "/laundry", label: "Laundry" },
+    { href: "/contact", label: "Hubungi Kami" },
+  ],
   socialLinks: {
     instagram: "#",
   },
@@ -20,16 +29,6 @@ export const navLinks = [
   { href: "/", label: "Beranda" },
   { href: "/about", label: "Tentang Kami" },
   { href: "/pengadaan", label: "Pengadaan Barang" },
-  { href: "/konstruksi", label: "Konstruksi" },
-  { href: "/travel", label: "Travel" },
-  { href: "/laundry", label: "Laundry" },
-  { href: "/contact", label: "Hubungi Kami" },
-];
-
-export const footerLinks = [
-  { href: "/", label: "Beranda" },
-  { href: "/about", label: "Tentang Kami" },
-  { href: "/pengadaan", label: "Pengadaan" },
   { href: "/konstruksi", label: "Konstruksi" },
   { href: "/travel", label: "Travel" },
   { href: "/laundry", label: "Laundry" },

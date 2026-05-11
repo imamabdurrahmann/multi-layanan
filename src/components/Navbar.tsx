@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Building2 } from "lucide-react";
-import { navLinks } from "@/config/company";
+import { Menu, X } from "lucide-react";
+import { navLinks, companyInfo } from "@/config/company";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -13,11 +13,11 @@ export default function Navbar() {
   return (
     <header className="header">
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 flex justify-between items-center h-16">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[var(--maroon-primary)] to-[var(--maroon-light)] flex items-center justify-center">
-            <Building2 size={20} className="text-white" />
+        <Link href="/" className="flex items-center gap-3">
+          <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[var(--maroon-dark)] to-[var(--maroon-primary)] flex items-center justify-center shadow-md">
+            <span className="text-white font-black text-lg">SF</span>
           </div>
-          <span className="font-bold text-xl text-[var(--maroon-primary)]">PT Sunfelix</span>
+          <span className="font-bold text-xl text-[var(--maroon-dark)]">{companyInfo.name}</span>
         </Link>
 
         <ul className="hidden lg:flex gap-1">
