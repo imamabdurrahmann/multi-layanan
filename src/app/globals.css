@@ -283,6 +283,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   margin: 0 auto 1.25rem;
+  transition: all 0.3s ease;
 }
 
 .service-card .icon-wrapper svg {
