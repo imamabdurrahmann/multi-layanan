@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from "lucide-react";
+import { companyInfo } from "@/config/company";
 
 export default function ContactPage() {
   return (
@@ -35,8 +36,8 @@ export default function ContactPage() {
                   <div>
                     <h4 className="font-bold text-[var(--text-dark)] mb-1">Alamat Kantor</h4>
                     <p className="text-[var(--text-secondary)]">
-                      Jl. Bisnis Indonesia No. 123<br />
-                      Jakarta Pusat 10110
+                      {companyInfo.address}<br />
+                      {companyInfo.city}
                     </p>
                   </div>
                 </div>
@@ -48,7 +49,7 @@ export default function ContactPage() {
                   <div>
                     <h4 className="font-bold text-[var(--text-dark)] mb-1">Telepon / WhatsApp</h4>
                     <p className="text-[var(--text-secondary)]">
-                      +62 812-3456-7890
+                      {companyInfo.phone}
                     </p>
                   </div>
                 </div>
@@ -60,7 +61,7 @@ export default function ContactPage() {
                   <div>
                     <h4 className="font-bold text-[var(--text-dark)] mb-1">Email</h4>
                     <p className="text-[var(--text-secondary)]">
-                      info@sunfelix.co.id
+                      {companyInfo.email}
                     </p>
                   </div>
                 </div>
@@ -72,8 +73,8 @@ export default function ContactPage() {
                   <div>
                     <h4 className="font-bold text-[var(--text-dark)] mb-1">Jam Operasional</h4>
                     <p className="text-[var(--text-secondary)]">
-                      Senin - Jumat: 08.00 - 17.00<br />
-                      Sabtu: 08.00 - 12.00
+                      {companyInfo.operatingHours.weekdays}<br />
+                      {companyInfo.operatingHours.saturday}
                     </p>
                   </div>
                 </div>
@@ -82,7 +83,7 @@ export default function ContactPage() {
               {/* Quick Contact Buttons */}
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
-                  href="https://wa.me/6281234567890"
+                  href={`https://wa.me/${companyInfo.whatsapp}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] text-white font-semibold rounded-lg hover:bg-[#20bd5a] transition-colors"
@@ -91,7 +92,7 @@ export default function ContactPage() {
                   Chat WhatsApp
                 </a>
                 <a
-                  href="mailto:info@sunfelix.co.id"
+                  href={`mailto:${companyInfo.email}`}
                   className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--maroon-primary)] text-white font-semibold rounded-lg hover:bg-[var(--maroon-light)] transition-colors"
                 >
                   <Mail size={20} />
@@ -103,34 +104,42 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div className="card p-8">
               <h3 className="text-xl font-bold text-[var(--text-dark)] mb-6">Kirim Pesan</h3>
-              <form className="space-y-4">
+              <form className="space-y-4" action="https://formspree.io/f/your-form-id" method="POST">
                 <div>
-                  <label className="form-label">Nama Lengkap</label>
+                  <label htmlFor="name" className="form-label">Nama Lengkap</label>
                   <input
+                    id="name"
                     type="text"
+                    name="name"
                     className="form-input"
                     placeholder="Masukkan nama Anda"
+                    required
                   />
                 </div>
                 <div>
-                  <label className="form-label">Email</label>
+                  <label htmlFor="email" className="form-label">Email</label>
                   <input
+                    id="email"
                     type="email"
+                    name="email"
                     className="form-input"
                     placeholder="nama@email.com"
+                    required
                   />
                 </div>
                 <div>
-                  <label className="form-label">Nomor WhatsApp</label>
+                  <label htmlFor="phone" className="form-label">Nomor WhatsApp</label>
                   <input
+                    id="phone"
                     type="tel"
+                    name="phone"
                     className="form-input"
                     placeholder="08xx-xxxx-xxxx"
                   />
                 </div>
                 <div>
-                  <label className="form-label">Layanan yang Dibutuhkan</label>
-                  <select className="form-input">
+                  <label htmlFor="service" className="form-label">Layanan yang Dibutuhkan</label>
+                  <select id="service" name="service" className="form-input">
                     <option value="">Pilih layanan...</option>
                     <option value="pengadaan">Pengadaan Barang</option>
                     <option value="konstruksi">Konstruksi</option>
@@ -140,11 +149,14 @@ export default function ContactPage() {
                   </select>
                 </div>
                 <div>
-                  <label className="form-label">Pesan</label>
+                  <label htmlFor="message" className="form-label">Pesan</label>
                   <textarea
+                    id="message"
+                    name="message"
                     className="form-input"
                     rows={4}
                     placeholder="Tulis pesan atau pertanyaan Anda..."
+                    required
                   />
                 </div>
                 <button
@@ -167,7 +179,7 @@ export default function ContactPage() {
             <MapPin size={48} className="mx-auto mb-4 opacity-80" />
             <h3 className="text-2xl font-bold mb-2">Lokasi Kantor</h3>
             <p className="text-white/80 mb-4">
-              Jl. Bisnis Indonesia No. 123, Jakarta Pusat 10110
+              {companyInfo.address}, {companyInfo.city}
             </p>
             <a
               href="https://maps.google.com"

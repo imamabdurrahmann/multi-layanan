@@ -1,53 +1,6 @@
 import { Package, CheckCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
-
-const portfolioItems = [
-  {
-    title: "Pengadaan Peralatan Kantor",
-    client: "PT Pertamina Hulu Energi",
-    description: "Penyediaan lengkap peralatan kantor untuk operasional perusahaan minyak dan gas.",
-    items: ["Meja Kerja Ergonomis", "Kursi Executive", "Lemari Arsip", "AC Unit"],
-  },
-  {
-    title: "Pengadaan Alkes Rumah Sakit",
-    client: "RSUD dr. Soetomo",
-    description: "Pengadaan alat kesehatan untuk peralatan ruang operasi dan ICU.",
-    items: ["Mesin Anestesi", "Monitor Pasien", "Infus Pump", "Ventilator"],
-  },
-  {
-    title: "Pengadaan Komputer & IT",
-    client: "PT Bank Central Asia",
-    description: "Pengadaan infrastruktur IT untuk kantor cabang di seluruh Indonesia.",
-    items: ["Desktop PC", "Printer Network", "Server Rack", "UPS System"],
-  },
-  {
-    title: "Pengadaan Furniture Hotel",
-    client: "Hotel Santika Premiere",
-    description: "Pengadaan furniture lengkap untuk 200 kamar hotel bintang 4.",
-    items: ["Bed Set Premium", "Mini Bar Cabinet", "Working Desk", "Wardrobe"],
-  },
-  {
-    title: "Pengadaan Peralatan laboratorium",
-    client: "Universitas Indonesia",
-    description: "Peralatan laboratorium penelitian mutakhir untuk fakultas MIPA.",
-    items: ["Mikroskop Digital", "Centrifuge", "Spectrophotometer", "Autoclave"],
-  },
-  {
-    title: "Pengadaan Kendaraan Operasional",
-    client: "PT PLN Persero",
-    description: "Pengadaan kendaraan listrik untuk tim lapangan PLN di Jawa Barat.",
-    items: ["Mobil Listrik", "Motor Listrik", "Charging Station", "Spare Parts"],
-  },
-];
-
-const advantages = [
-  "Harga kompetitif dengan kualitas terjamin",
-  "Pengiriman tepat waktu ke seluruh Indonesia",
-  "Garansi resmi dari distributor resmi",
-  "Layanan purna jual dan maintenance",
-  "Tim procurement berpengalaman",
-  "Dokumentasi lengkap dan transparan",
-];
+import { pengadaanPortfolio, pengadaanAdvantages } from "@/data/pengadaan";
 
 export default function PengadaanPage() {
   return (
@@ -80,7 +33,7 @@ export default function PengadaanPage() {
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              {advantages.slice(0, 4).map((adv, i) => (
+              {pengadaanAdvantages.slice(0, 4).map((adv, i) => (
                 <div key={i} className="card p-4 flex items-start gap-3">
                   <CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
                   <span className="text-sm text-[var(--text-secondary)]">{adv}</span>
@@ -103,8 +56,8 @@ export default function PengadaanPage() {
           </div>
 
           <div className="portfolio-grid">
-            {portfolioItems.map((item, i) => (
-              <div key={i} className="portfolio-item">
+            {pengadaanPortfolio.map((item, i) => (
+              <article key={i} className="portfolio-item">
                 <div className="portfolio-image text-lg">
                   <Package className="w-10 h-10 text-white/50" />
                 </div>
@@ -120,7 +73,7 @@ export default function PengadaanPage() {
                     ))}
                   </div>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>

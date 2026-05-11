@@ -1,59 +1,6 @@
 import { Shirt, CheckCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
-
-const portfolioItems = [
-  {
-    title: "Laundry Hotel Bintang 5",
-    client: "Hotel Mulia Senayan",
-    description: "Layanan laundry dan dry cleaning untuk 500+ kamar hotel bintang 5 di Jakarta.",
-    services: ["Sprei & Selimut", "Bathrobe & Towel", "Uniform Staff", "Curtain & Drapery"],
-    volume: "2.000 kg/hari",
-  },
-  {
-    title: "Laundry Rumah Sakit",
-    client: "RS Medika Permata Hijau",
-    description: "Layanan laundry medis dengan standar hygiene tinggi untuk RS dengan 200 tempat tidur.",
-    services: ["Linens Medis", "Seragam Medis", "Apron & Scrub", "Bed Cover Steril"],
-    volume: "500 kg/hari",
-  },
-  {
-    title: "Laundry Industrial - Mining",
-    client: "PT Aneka Tambang",
-    description: "Jasa laundry seragam kerja untuk karyawan tambang emas di Pongkor, Jawa Barat.",
-    services: ["Seragam Mining", "Safety Gear", "Workwear Heavy Duty", "Boot & Helmet"],
-    volume: "300 kg/hari",
-  },
-  {
-    title: "Laundry Apartment Premium",
-    client: "Kartu Saya Residence",
-    description: "Layanan laundry On-Demand untuk penghuni apartemen premium di Jakarta.",
-    services: ["Daily Wear", "Dry Clean", "Ironing Only", "Express Service"],
-    volume: "100 kg/hari",
-  },
-  {
-    title: "Laundry Corporate Office",
-    client: "PT Unilever Indonesia",
-    description: "Layanan laundry berkala untuk seragam karyawan kantor Unilever di Jakarta.",
-    services: ["Seragam Kantor", "Kemeja & Celana", "Blazer & Jaket", "Necktie & Scarf"],
-    volume: "200 kg/minggu",
-  },
-  {
-    title: "Laundry F&B - Restaurant",
-    client: "PT Sari Roti",
-    description: "Layanan laundry untuk linen dapur dan seragam restoran di jaringan restoran Sari Roti.",
-    services: ["Table Cloth", "Napkin", "Chef Uniform", "Apron & Towel"],
-    volume: "400 kg/hari",
-  },
-];
-
-const services = [
-  "Laundry Komersial Skala Besar",
-  "Dry Cleaning Premium",
-  "Laundry Medis (Steril)",
-  "Industrial Laundry",
-  "Linen Hotel & Resort",
-  "Jasa Setrika & Packaging",
-];
+import { laundryPortfolio, laundryServices } from "@/data/laundry";
 
 export default function LaundryPage() {
   return (
@@ -88,7 +35,7 @@ export default function LaundryPage() {
             <div className="bg-gradient-to-br from-[var(--maroon-primary)] to-[var(--maroon-light)] rounded-2xl p-8 text-white">
               <h3 className="text-xl font-bold mb-4">Lingkup Layanan Laundry</h3>
               <ul className="space-y-3">
-                {services.map((service, i) => (
+                {laundryServices.map((service, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <CheckCircle size={20} className="text-[var(--gold-light)] flex-shrink-0 mt-0.5" />
                     <span className="text-white/90">{service}</span>
@@ -112,8 +59,8 @@ export default function LaundryPage() {
           </div>
 
           <div className="portfolio-grid">
-            {portfolioItems.map((item, i) => (
-              <div key={i} className="portfolio-item">
+            {laundryPortfolio.map((item, i) => (
+              <article key={i} className="portfolio-item">
                 <div className="portfolio-image flex-col text-lg gap-2">
                   <Shirt className="w-10 h-10 text-white/50" />
                   <span className="text-sm text-white/70">{item.volume}</span>
@@ -130,7 +77,7 @@ export default function LaundryPage() {
                     ))}
                   </div>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>

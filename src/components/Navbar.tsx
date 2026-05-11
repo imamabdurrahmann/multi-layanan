@@ -4,16 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Building2 } from "lucide-react";
-
-const navLinks = [
-  { href: "/", label: "Beranda" },
-  { href: "/about", label: "Tentang Kami" },
-  { href: "/pengadaan", label: "Pengadaan Barang" },
-  { href: "/konstruksi", label: "Konstruksi" },
-  { href: "/travel", label: "Travel" },
-  { href: "/laundry", label: "Laundry" },
-  { href: "/contact", label: "Hubungi Kami" },
-];
+import { navLinks } from "@/config/company";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -45,28 +36,32 @@ export default function Navbar() {
           })}
         </ul>
 
-        <button className="lg:hidden p-2" onClick={() => setMobileOpen(!mobileOpen)}>
+        <button
+          className="lg:hidden p-2"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label={mobileOpen ? "Tutup menu" : "Buka menu"}
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-menu"
+        >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
 
-      {mobileOpen && (
-        <div className="lg:hidden bg-white border-t border-[var(--bg-gray)]">
-          <ul className="px-4 py-4 space-y-2">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="nav-link block"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <div id="mobile-menu" className="lg:hidden bg-white border-t border-[var(--bg-gray)]">
+        <ul className="px-4 py-4 space-y-2">
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className="nav-link block"
+                onClick={() => setMobileOpen(false)}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </header>
   );
 }

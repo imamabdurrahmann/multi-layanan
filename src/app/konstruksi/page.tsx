@@ -1,59 +1,6 @@
 import { HardHat, CheckCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
-
-const portfolioItems = [
-  {
-    title: "Pembangunan Gedung Perkantoran",
-    client: "PT Astra International",
-    description: "Konstruksi gedung perkantoran 5 lantai untuk kantor pusat anak perusahaan Astra.",
-    scope: ["Pondasi dan Struktur", "Finishing Interior", "Sistem Listrik", "AC dan Ventilasi"],
-    year: "2023",
-  },
-  {
-    title: "Pembangunan Pabrik Manufaktur",
-    client: "PT Semen Indonesia",
-    description: " Pembangunan pabrik semen dengan kapasitas 500.000 ton per tahun di Sulawesi.",
-    scope: ["Struktur Beton Bertulang", "Piping Industri", "Instalasi Listrik", "Environmental System"],
-    year: "2022",
-  },
-  {
-    title: "Renovasi Hotel Bintang 4",
-    client: "Hotel Harris Sunset Road",
-    description: "Renovasi total 150 kamar dan area publik hotel bintang 4 di Bali.",
-    scope: ["Demolisi", "Renovasi Kamar", "Pembalikan Fasilitas", "Upgrade Sistem"],
-    year: "2024",
-  },
-  {
-    title: "Pembangunan Jembatan",
-    client: "Dinas PU Kalimantan Timur",
-    description: "Konstruksi jembatan sepanjang 120 meter untuk menghubungkan dua distrik.",
-    scope: ["Pondasi Tiang Bor", "Struktur Baja", "Landasan Jembatan", "Railing"],
-    year: "2023",
-  },
-  {
-    title: "Pembangunan Rumah Sakit",
-    client: "RS Siloam Hospitals",
-    description: "Pembangunan rumah sakit baru dengan kapasitas 300 tempat tidur di Jakarta.",
-    scope: ["Gedung Bertingkat", "Ruang Operasi", "ICU dan ICCU", "Sistem Medical Gas"],
-    year: "2022",
-  },
-  {
-    title: "Konstruksi Warehouse",
-    client: "PT Gudang Garam",
-    description: "Pembuatan warehouse seluas 10.000 m² untuk penyimpanan logistik di Surabaya.",
-    scope: ["Struktur Steel Frame", "Roofing Metal", "Loading Dock", "Office Area"],
-    year: "2024",
-  },
-];
-
-const services = [
-  "Perencanaan dan Desain Struktur",
-  "Konstruksi Bangunan Komersial",
-  "Konstruksi Industrial",
-  "Renovasi dan Retrofitting",
-  "Infrastruktur Jalan dan Jembatan",
-  "Pengawasan dan Quality Control",
-];
+import { konstruksiPortfolio, konstruksiServices } from "@/data/konstruksi";
 
 export default function KonstruksiPage() {
   return (
@@ -88,7 +35,7 @@ export default function KonstruksiPage() {
             <div className="bg-gradient-to-br from-[var(--maroon-primary)] to-[var(--maroon-light)] rounded-2xl p-8 text-white">
               <h3 className="text-xl font-bold mb-4">Lingkup Layanan Konstruksi</h3>
               <ul className="space-y-3">
-                {services.map((service, i) => (
+                {konstruksiServices.map((service, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <CheckCircle size={20} className="text-[var(--gold-light)] flex-shrink-0 mt-0.5" />
                     <span className="text-white/90">{service}</span>
@@ -112,8 +59,8 @@ export default function KonstruksiPage() {
           </div>
 
           <div className="portfolio-grid">
-            {portfolioItems.map((item, i) => (
-              <div key={i} className="portfolio-item">
+            {konstruksiPortfolio.map((item, i) => (
+              <article key={i} className="portfolio-item">
                 <div className="portfolio-image flex-col text-lg gap-2">
                   <HardHat className="w-10 h-10 text-white/50" />
                   <span className="text-sm text-white/70">{item.year}</span>
@@ -130,7 +77,7 @@ export default function KonstruksiPage() {
                     ))}
                   </div>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
