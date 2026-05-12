@@ -1,105 +1,179 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Facebook, ArrowRight } from "lucide-react";
 import { companyInfo } from "@/config/company";
 
 export default function Footer() {
-  const whatsappUrl = `https://wa.me/${companyInfo.whatsapp}`;
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="footer">
-      {/* Main Footer Content */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Top Section - Company Info & Quick Contact */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-12">
-          {/* Company Info */}
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--gold-primary)] to-[var(--gold-dark)] flex items-center justify-center shadow-lg">
-                <span className="text-[var(--maroon-dark)] font-black text-xl">SF</span>
+        {/* Main Footer Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 py-12 lg:py-16">
+          {/* Company Info Section */}
+          <div className="lg:col-span-1">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[var(--gold-primary)] to-[var(--gold-dark)] flex items-center justify-center shadow-lg">
+                <span className="text-[var(--maroon-dark)] font-black text-lg">SF</span>
               </div>
               <div>
-                <h3 className="font-bold text-xl text-white">{companyInfo.name}</h3>
-                <p className="text-sm text-white/60">{companyInfo.tagline}</p>
+                <h3 className="font-bold text-white leading-tight">{companyInfo.name}</h3>
+                <p className="text-sm text-[var(--gold-primary)]">{companyInfo.tagline}</p>
               </div>
             </div>
-            <p className="text-white/80 leading-relaxed mb-6 max-w-md">
-              {companyInfo.name} menyediakan layanan pengadaan barang, konstruksi, travel, dan laundry untuk membantu bisnis Anda berkembang dengan efisien dan profesional.
+            <p className="text-white/70 text-sm leading-relaxed mb-6">
+              Memberikan layanan profesional dalam pengadaan barang, konstruksi, travel, dan laundry untuk kebutuhan bisnis Anda.
             </p>
-
-            {/* Operating Hours */}
-            <div className="flex items-start gap-3 p-4 bg-white/5 rounded-xl border border-white/10">
-              <Clock size={20} className="text-[var(--gold-primary)] flex-shrink-0 mt-0.5" />
-              <div className="text-sm">
-                <p className="text-white font-medium mb-1">Jam Operasional</p>
-                <p className="text-white/60">{companyInfo.operatingHours.weekdays}</p>
-                <p className="text-white/60">{companyInfo.operatingHours.saturday}</p>
-              </div>
+            {/* Social Media */}
+            <div className="flex items-center gap-3">
+              <a
+                href={companyInfo.socialLinks.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-[#E1306C] hover:text-white transition-all duration-300"
+                aria-label="Instagram"
+              >
+                <Instagram size={18} />
+              </a>
+              <a
+                href={companyInfo.socialLinks.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-[#1877F2] hover:text-white transition-all duration-300"
+                aria-label="Facebook"
+              >
+                <Facebook size={18} />
+              </a>
             </div>
           </div>
 
-          {/* Quick Contact Card */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-            <h4 className="text-lg font-bold text-white mb-4">Hubungi Kami</h4>
-            <div className="space-y-4 mb-6">
-              <a href={`tel:${companyInfo.phone}`} className="flex items-center gap-3 text-white/80 hover:text-[var(--gold-primary)] transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
-                  <Phone size={18} />
+          {/* Contact Section */}
+          <div>
+            <h4 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span className="w-1.5 h-6 bg-[var(--gold-primary)] rounded-full"></span>
+              Kontak Kami
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <a href={`tel:${companyInfo.phone}`} className="flex items-start gap-3 text-white/70 hover:text-[var(--gold-primary)] transition-colors group">
+                  <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--gold-primary)]/20 transition-colors">
+                    <Phone size={16} />
+                  </div>
+                  <div>
+                    <span className="text-xs text-white/40 block">Telepon</span>
+                    <span className="text-sm">{companyInfo.phone}</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href={`https://wa.me/${companyInfo.whatsapp}`} target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-white/70 hover:text-[var(--gold-primary)] transition-colors group">
+                  <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--gold-primary)]/20 transition-colors">
+                    <Phone size={16} />
+                  </div>
+                  <div>
+                    <span className="text-xs text-white/40 block">Seluler</span>
+                    <span className="text-sm">{companyInfo.mobile1}</span>
+                    <span className="text-sm block">{companyInfo.mobile2}</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${companyInfo.email}`} className="flex items-start gap-3 text-white/70 hover:text-[var(--gold-primary)] transition-colors group">
+                  <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--gold-primary)]/20 transition-colors">
+                    <Mail size={16} />
+                  </div>
+                  <div>
+                    <span className="text-xs text-white/40 block">Email</span>
+                    <span className="text-sm">{companyInfo.email}</span>
+                  </div>
+                </a>
+              </li>
+              <li className="flex items-start gap-3 text-white/70 group">
+                <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0">
+                  <MapPin size={16} />
                 </div>
-                <span>{companyInfo.phone}</span>
+                <div>
+                  <span className="text-xs text-white/40 block">Alamat</span>
+                  <span className="text-sm">{companyInfo.address}</span>
+                  <span className="text-sm block">{companyInfo.city}</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          {/* Quick Links Section */}
+          <div>
+            <h4 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span className="w-1.5 h-6 bg-[var(--gold-primary)] rounded-full"></span>
+              Tautan Cepat
+            </h4>
+            <ul className="space-y-2">
+              {companyInfo.footerLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="flex items-center gap-2 text-white/70 hover:text-[var(--gold-primary)] hover:translate-x-1 transition-all duration-300"
+                  >
+                    <ArrowRight size={14} className="opacity-0 group-hover:opacity-100" />
+                    <span>{link.label}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Social Media Links Section */}
+          <div>
+            <h4 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <span className="w-1.5 h-6 bg-[var(--gold-primary)] rounded-full"></span>
+              Media Sosial
+            </h4>
+            <div className="space-y-4">
+              <a
+                href={companyInfo.socialLinks.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-[#E1306C]/20 border border-white/10 hover:border-[#E1306C]/50 transition-all duration-300 group"
+              >
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#833AB4] via-[#E1306C] to-[#F77737] flex items-center justify-center">
+                  <Instagram size={18} className="text-white" />
+                </div>
+                <div>
+                  <span className="text-xs text-white/40 block">Instagram</span>
+                  <span className="text-sm text-white group-hover:text-[#E1306C] transition-colors">{companyInfo.instagram}</span>
+                </div>
               </a>
-              <a href={`mailto:${companyInfo.email}`} className="flex items-center gap-3 text-white/80 hover:text-[var(--gold-primary)] transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
-                  <Mail size={18} />
+              <a
+                href={companyInfo.socialLinks.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-[#1877F2]/20 border border-white/10 hover:border-[#1877F2]/50 transition-all duration-300 group"
+              >
+                <div className="w-10 h-10 rounded-lg bg-[#1877F2] flex items-center justify-center">
+                  <Facebook size={18} className="text-white" />
                 </div>
-                <span>{companyInfo.email}</span>
+                <div>
+                  <span className="text-xs text-white/40 block">Facebook</span>
+                  <span className="text-sm text-white group-hover:text-[#1877F2] transition-colors">{companyInfo.facebook}</span>
+                </div>
               </a>
-              <div className="flex items-start gap-3 text-white/80">
-                <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
-                  <MapPin size={18} />
-                </div>
-                <span>{companyInfo.address}, {companyInfo.city}</span>
-              </div>
             </div>
-            <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-[var(--gold-primary)] text-[var(--maroon-dark)] font-semibold rounded-xl hover:bg-[var(--gold-light)] transition-colors w-full sm:w-auto">
-              Hubungi Sekarang
-              <ArrowRight size={18} />
-            </Link>
           </div>
         </div>
 
-        {/* Bottom Section - Links & Copyright */}
-        <div className="border-t border-white/10 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            {/* Navigation Links */}
-            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
-              {companyInfo.footerLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm text-white/60 hover:text-white transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-
-            {/* Social Links & Copyright */}
-            <div className="flex items-center gap-4">
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#25D366] transition-colors"
-                aria-label="WhatsApp"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.296-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.478 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                </svg>
-              </a>
-              <span className="text-sm text-white/40">|</span>
-              <p className="text-sm text-white/50">
-                © {new Date().getFullYear()} {companyInfo.name}. Hak Cipta Dilindungi.
-              </p>
+        {/* Copyright Bar */}
+        <div className="border-t border-white/10 py-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-white/50 text-center sm:text-left">
+              © {currentYear} {companyInfo.name}. All Rights Reserved.
+            </p>
+            <div className="flex items-center gap-6">
+              <Link href="/privacy" className="text-xs text-white/40 hover:text-white/70 transition-colors">
+                Kebijakan Privasi
+              </Link>
+              <Link href="/terms" className="text-xs text-white/40 hover:text-white/70 transition-colors">
+                Syarat & Ketentuan
+              </Link>
             </div>
           </div>
         </div>
