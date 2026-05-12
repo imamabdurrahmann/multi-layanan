@@ -60,7 +60,7 @@ export default function Footer() {
                 <span>{companyInfo.address}, {companyInfo.city}</span>
               </div>
             </div>
-            <Link href="/contact" className="inline-flex items-center gap-2 px-5 py-3 bg-[var(--gold-primary)] text-[var(--maroon-dark)] font-semibold rounded-xl hover:bg-[var(--gold-light)] transition-colors">
+            <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-[var(--gold-primary)] text-[var(--maroon-dark)] font-semibold rounded-xl hover:bg-[var(--gold-light)] transition-colors w-full sm:w-auto">
               Hubungi Sekarang
               <ArrowRight size={18} />
             </Link>

@@ -90,9 +90,9 @@ export default function KonstruksiPage() {
           <p className="text-[var(--text-secondary)] mb-8">
             Hubungi tim kami untuk konsultasi, survei lokasi, dan penawaran estimasi biaya.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/contact" className="btn-primary">
-              Hubungi Kami
+          <div className="flex flex-col gap-3 w-full sm:flex-row sm:justify-center sm:w-auto">
+            <Link href="/contact" className="btn-primary w-full sm:w-auto justify-center">
+              Konsultasi Sekarang
               <ArrowRight size={18} />
             </Link>
           </div>
