@@ -48,10 +48,12 @@ export default function ContactPage() {
               <div className="w-12 h-12 rounded-xl bg-[#25D366]/10 flex items-center justify-center mb-4">
                 <Phone size={24} className="text-[#25D366]" />
               </div>
-              <h3 className="text-lg font-bold text-[var(--text-dark)] mb-2">Telepon</h3>
-              <p className="text-2xl font-bold text-[var(--maroon-primary)] mb-4">
-                {companyInfo.phone}
-              </p>
+              <h3 className="text-lg font-bold text-[var(--text-dark)] mb-2">Telepon & Seluler</h3>
+              <div className="space-y-2 mb-4">
+                <p className="text-sm text-[var(--text-secondary)]">Telp: {companyInfo.phone}</p>
+                <p className="text-sm text-[var(--text-secondary)]">Seluler: {companyInfo.mobile1}</p>
+                <p className="text-sm text-[var(--text-secondary)]">Seluler: {companyInfo.mobile2}</p>
+              </div>
               <a
                 href={`https://wa.me/${companyInfo.whatsapp}`}
                 target="_blank"
