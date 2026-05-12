@@ -20,10 +20,10 @@ const visionValues = [
 ];
 
 const milestones = [
-  { year: "2019", event: "PT Sunfelix didirikan dengan layanan pengadaan barang" },
-  { year: "2020", event: "Ekspansi layanan ke sektor konstruksi" },
-  { year: "2021", event: "Peluncuran layanan travel dan transportasi" },
-  { year: "2022", event: "Perluasan layanan laundry profesional" },
+  { year: "2012", event: "PT Sunfelix Prima Solusi didirikan di Bengkulu" },
+  { year: "2015", event: "Ekspansi layanan pengadaan barang ke seluruh Sumatra" },
+  { year: "2018", event: "Peluncuran layanan konstruksi dan travel" },
+  { year: "2020", event: "Perluasan layanan laundry profesional" },
   { year: "2023", event: "Mencapai 50+ klien aktif" },
   { year: "2024", event: "100+ proyek sukses diselesaikan" },
 ];
@@ -43,11 +43,16 @@ export default function AboutPage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="hero-section py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Tentang Kami</h1>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto">
-            {companyInfo.name} adalah perusahaan solusi bisnis terpercaya yang menyediakan layanan pengadaan barang, konstruksi, travel, dan laundry untuk kebutuhan bisnis Anda.
+      <section className="hero-section">
+        <div className="hero-shapes">
+          <div className="hero-shape hero-shape-1" />
+          <div className="hero-shape hero-shape-2" />
+          <div className="hero-shape hero-shape-3" />
+        </div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full text-center relative z-10">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">Tentang Kami</h1>
+          <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto">
+            Didirikan tahun 2012 di Bengkulu, {companyInfo.name} adalah perusahaan solusi bisnis terpercaya yang menyediakan layanan pengadaan barang, konstruksi, travel, dan laundry untuk kebutuhan bisnis Anda.
           </p>
         </div>
       </section>
@@ -57,7 +62,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="text-sm font-semibold tracking-wider text-[var(--maroon-primary)] uppercase">Tentang {companyInfo.name}</span>
+              <span className="text-sm font-semibold tracking-wider text-[var(--primary)] uppercase">Tentang {companyInfo.name}</span>
               <h2 className="section-title mt-2">Solusi Terpadu untuk Kebutuhan Bisnis Anda</h2>
               <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
                 Didirikan pada tahun {companyInfo.established}, {companyInfo.name} telah berkembang menjadi perusahaan solusi bisnis terpercaya di Indonesia. Dengan pengalaman lebih dari {yearsExperience} tahun, kami berkomitmen untuk memberikan layanan berkualitas tinggi yang disesuaikan dengan kebutuhan setiap klien.
@@ -66,7 +71,7 @@ export default function AboutPage() {
                 Visi kami adalah menjadi mitra bisnis yang dapat diandalkan dalam setiap aspek operasional bisnis Anda. Melalui layanan pengadaan barang, konstruksi, travel, dan laundry, kami siap membantu bisnis Anda berkembang lebih efisien dan profesional.
               </p>
             </div>
-            <div className="bg-gradient-to-br from-[var(--maroon-primary)] to-[var(--maroon-light)] rounded-3xl p-8 text-white">
+            <div className="bg-gradient-to-br from-[var(--primary)] to-[var(--primary-light)] rounded-3xl p-8 text-white">
               <div className="text-center mb-8">
                 <div className="text-6xl font-bold mb-2">SF</div>
                 <div className="text-lg font-semibold">{companyInfo.name}</div>
@@ -98,11 +103,11 @@ export default function AboutPage() {
       {/* Quote Section */}
       <section className="section-alt py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <div className="text-6xl text-[var(--maroon-light)] mb-6">"</div>
+          <div className="text-6xl text-[var(--primary-light)] mb-6">"</div>
           <blockquote className="text-xl sm:text-2xl md:text-3xl font-medium text-[var(--text-dark)] leading-relaxed mb-6">
             Kepercayaan klien adalah aset berharga yang kami jaga dengan sepenuh hati melalui dedikasi dan kualitas layanan terbaik.
           </blockquote>
-          <cite className="text-[var(--maroon-primary)] font-semibold">— Manajemen {companyInfo.name}</cite>
+          <cite className="text-[var(--primary)] font-semibold">— Manajemen {companyInfo.name}</cite>
         </div>
       </section>
 
@@ -110,14 +115,14 @@ export default function AboutPage() {
       <section className="section">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="section-header">
-            <span className="text-sm font-semibold tracking-wider text-[var(--maroon-primary)] uppercase">Filosofi Kami</span>
+            <span className="text-sm font-semibold tracking-wider text-[var(--primary)] uppercase">Filosofi Kami</span>
             <h2 className="section-title mt-2">Visi, Misi, dan Nilai</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {visionValues.map((item) => (
               <article key={item.title} className="card p-8 text-center">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--maroon-primary)] to-[var(--maroon-light)] flex items-center justify-center text-white mx-auto mb-6">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--primary)] to-[var(--primary-light)] flex items-center justify-center text-white mx-auto mb-6">
                   {item.icon}
                 </div>
                 <h3 className="text-xl font-bold text-[var(--text-dark)] mb-3">{item.title}</h3>
@@ -132,14 +137,14 @@ export default function AboutPage() {
       <section className="section section-alt">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="section-header">
-            <span className="text-sm font-semibold tracking-wider text-[var(--maroon-primary)] uppercase">Perjalanan Kami</span>
+            <span className="text-sm font-semibold tracking-wider text-[var(--primary)] uppercase">Perjalanan Kami</span>
             <h2 className="section-title mt-2">Kilau {companyInfo.name}</h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {milestones.map((m, i) => (
               <article key={i} className="card p-6 flex gap-4">
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[var(--maroon-primary)] to-[var(--maroon-light)] flex items-center justify-center text-white font-bold flex-shrink-0">
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[var(--primary)] to-[var(--primary-light)] flex items-center justify-center text-white font-bold flex-shrink-0">
                   {m.year}
                 </div>
                 <p className="text-[var(--text-secondary)] self-center">{m.event}</p>
@@ -154,7 +159,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="text-sm font-semibold tracking-wider text-[var(--maroon-primary)] uppercase">Keunggulan Kami</span>
+              <span className="text-sm font-semibold tracking-wider text-[var(--primary)] uppercase">Keunggulan Kami</span>
               <h2 className="section-title mt-2">Mengapa Memilih {companyInfo.name}?</h2>
               <p className="text-[var(--text-secondary)] mb-8">
                 Dengan pengalaman lebih dari {yearsExperience} tahun, kami telah membangun reputasi sebagai mitra bisnis yang dapat diandalkan. Berikut adalah alasan mengapa Anda harus memilih kami:
@@ -173,24 +178,24 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-4">
                 <div className="card p-4 sm:p-6 text-center">
-                  <Award className="w-8 h-8 sm:w-10 sm:h-10 text-[var(--maroon-primary)] mx-auto mb-2 sm:mb-3" />
+                  <Award className="w-8 h-8 sm:w-10 sm:h-10 text-[var(--primary)] mx-auto mb-2 sm:mb-3" />
                   <h4 className="font-bold text-sm sm:text-base">Berkualitas</h4>
                   <p className="text-xs sm:text-sm text-[var(--text-muted)]">Standar kualitas tertinggi</p>
                 </div>
                 <div className="card p-4 sm:p-6 text-center">
-                  <Users className="w-8 h-8 sm:w-10 sm:h-10 text-[var(--maroon-primary)] mx-auto mb-2 sm:mb-3" />
+                  <Users className="w-8 h-8 sm:w-10 sm:h-10 text-[var(--primary)] mx-auto mb-2 sm:mb-3" />
                   <h4 className="font-bold text-sm sm:text-base">Profesional</h4>
                   <p className="text-xs sm:text-sm text-[var(--text-muted)]">Tim ahli berpengalaman</p>
                 </div>
               </div>
               <div className="space-y-4">
                 <div className="card p-4 sm:p-6 text-center">
-                  <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-[var(--maroon-primary)] mx-auto mb-2 sm:mb-3" />
+                  <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-[var(--primary)] mx-auto mb-2 sm:mb-3" />
                   <h4 className="font-bold text-sm sm:text-base">Terpercaya</h4>
                   <p className="text-xs sm:text-sm text-[var(--text-muted)]">50+ klien puas</p>
                 </div>
                 <div className="card p-4 sm:p-6 text-center">
-                  <Target className="w-8 h-8 sm:w-10 sm:h-10 text-[var(--maroon-primary)] mx-auto mb-2 sm:mb-3" />
+                  <Target className="w-8 h-8 sm:w-10 sm:h-10 text-[var(--primary)] mx-auto mb-2 sm:mb-3" />
                   <h4 className="font-bold text-sm sm:text-base">Solusi Tepat</h4>
                   <p className="text-xs sm:text-sm text-[var(--text-muted)]">Sesuai kebutuhan Anda</p>
                 </div>
