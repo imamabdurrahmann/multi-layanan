@@ -2,33 +2,31 @@
 
 /* === PT Sunfelix Corporate Theme === */
 :root {
-  /* Maroon Primary Colors */
-  --maroon-dark: #6B0F1A;
-  --maroon-primary: #8B1538;
-  --maroon-light: #A91B3D;
-  --maroon-accent: #C92A42;
+  /* Primary Colors - Dark Navy Blue */
+  --primary: #1E3A5F;
+  --primary-dark: #152942;
+  --primary-light: #2A4A73;
 
   /* Gold Accent */
+  --gold: #D4A017;
   --gold-dark: #B8860B;
-  --gold-primary: #D4A84B;
   --gold-light: #E8C872;
 
   /* Neutrals */
   --bg-white: #FFFFFF;
-  --bg-light: #F8F9FA;
-  --bg-gray: #E9ECEF;
+  --bg-light: #F5F7FA;
+  --bg-gray: #E5E7EB;
   --text-dark: #1A1A2E;
-  --text-secondary: #4A4A5A;
-  --text-muted: #6C757D;
+  --text-secondary: #6B7280;
+  --text-muted: #9CA3AF;
 }
 
 @theme inline {
-  --color-maroon-dark: var(--maroon-dark);
-  --color-maroon-primary: var(--maroon-primary);
-  --color-maroon-light: var(--maroon-light);
-  --color-maroon-accent: var(--maroon-accent);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
+  --color-gold: var(--gold);
   --color-gold-dark: var(--gold-dark);
-  --color-gold-primary: var(--gold-primary);
   --color-gold-light: var(--gold-light);
   --color-bg-white: var(--bg-white);
   --color-bg-light: var(--bg-light);
@@ -92,18 +90,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-link:hover {
-  color: var(--maroon-primary);
-  background: rgba(139, 21, 56, 0.05);
+  color: var(--primary);
+  background: rgba(30, 58, 95, 0.05);
 }
 
 .nav-link.active {
-  color: var(--maroon-primary);
+  color: var(--primary);
   font-weight: 600;
 }
 
 /* === Hero Section - Unique Design === */
 .hero-section {
-  background: var(--maroon-dark);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   color: white;
   padding: 6rem 0;
   position: relative;
@@ -120,7 +118,7 @@ h1, h2, h3, h4, h5, h6 {
   right: -20%;
   width: 80%;
   height: 200%;
-  background: radial-gradient(ellipse at center, var(--maroon-primary) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, var(--primary-light) 0%, transparent 70%);
   opacity: 0.6;
   z-index: 0;
 }
@@ -154,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-shape-1 {
   width: 400px;
   height: 400px;
-  background: var(--gold-primary);
+  background: var(--gold);
   top: -100px;
   right: -100px;
   animation-delay: 0s;
@@ -207,7 +205,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 0.5rem;
   padding: 0.875rem 1.75rem;
-  background: var(--gold-primary);
+  background: var(--gold);
   color: var(--text-dark);
   font-weight: 600;
   border-radius: 8px;
@@ -220,7 +218,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn-primary:hover {
   background: var(--gold-light);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(212, 168, 75, 0.3);
+  box-shadow: 0 4px 12px rgba(212, 160, 23, 0.3);
 }
 
 .btn-secondary {
@@ -239,7 +237,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-secondary:hover {
   background: white;
-  color: var(--maroon-primary);
+  color: var(--primary);
 }
 
 /* === Card Styles === */
@@ -282,15 +280,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .service-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 32px rgba(107, 15, 26, 0.12);
-  border-color: var(--maroon-accent);
+  box-shadow: 0 12px 32px rgba(30, 58, 95, 0.12);
+  border-color: var(--gold);
 }
 
 .service-card .icon-wrapper {
   width: 72px;
   height: 72px;
   border-radius: 16px;
-  background: linear-gradient(135deg, var(--maroon-primary), var(--maroon-light));
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -349,7 +347,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .client-logo-item:hover {
-  border-color: var(--maroon-light);
+  border-color: var(--primary-light);
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
@@ -362,7 +360,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* === Footer === */
 .footer {
-  background: linear-gradient(135deg, var(--maroon-dark) 0%, var(--maroon-primary) 100%);
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
   color: white;
   padding: 4rem 0 2rem;
 }
@@ -384,7 +382,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .about-quote {
-  border-left: 4px solid var(--maroon-primary);
+  border-left: 4px solid var(--primary);
   padding-left: 1.5rem;
   margin: 2rem 0;
   font-style: italic;
@@ -404,8 +402,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .form-input:focus {
   outline: none;
-  border-color: var(--maroon-primary);
-  box-shadow: 0 0 0 3px rgba(139, 21, 56, 0.1);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
 }
 
 .form-label {
@@ -438,16 +436,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .portfolio-image {
   height: 180px;
-  background: linear-gradient(135deg, var(--maroon-primary), var(--maroon-light));
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   font-weight: 600;
-}
-
-.portfolio-content {
-  padding: 1.25rem;
 }
 
 /* === WhatsApp Float === */
