@@ -10,7 +10,7 @@ export default function Footer() {
       {/* Main Footer Content */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Top Section - Company Info & Quick Contact */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-12">
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-3 mb-6">

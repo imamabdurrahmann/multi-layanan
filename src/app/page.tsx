@@ -97,7 +97,7 @@ export default function HomePage() {
                 </Link>
               </div>
 
-              <div className="flex gap-8 mt-12 pt-8 border-t border-white/20">
+              <div className="flex flex-wrap gap-6 sm:gap-8 mt-10 sm:mt-12 pt-6 sm:pt-8 border-t border-white/20">
                 <div>
                   <div className="text-3xl font-bold text-[var(--gold-primary)]">50+</div>
                   <div className="text-sm text-white/70">Klien Puas</div>

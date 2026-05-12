@@ -129,7 +129,7 @@ export default function ContactPage() {
             </div>
 
             {/* Right - Contact Form */}
-            <div className="bg-[var(--bg-light)] rounded-2xl p-8">
+            <div className="bg-[var(--bg-light)] rounded-2xl p-4 sm:p-6 lg:p-8">
               <h3 className="text-xl font-bold text-[var(--text-dark)] mb-6">Kirim Pesan</h3>
               <form className="space-y-4" method="POST">
                 <div className="grid md:grid-cols-2 gap-4">

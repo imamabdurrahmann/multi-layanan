@@ -99,7 +99,7 @@ export default function AboutPage() {
       <section className="section-alt py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <div className="text-6xl text-[var(--maroon-light)] mb-6">"</div>
-          <blockquote className="text-2xl md:text-3xl font-medium text-[var(--text-dark)] leading-relaxed mb-6">
+          <blockquote className="text-xl sm:text-2xl md:text-3xl font-medium text-[var(--text-dark)] leading-relaxed mb-6">
             Kepercayaan klien adalah aset berharga yang kami jaga dengan sepenuh hati melalui dedikasi dan kualitas layanan terbaik.
           </blockquote>
           <cite className="text-[var(--maroon-primary)] font-semibold">— Manajemen {companyInfo.name}</cite>
@@ -170,29 +170,29 @@ export default function AboutPage() {
                 ))}
               </ul>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-4">
-                <div className="card p-6 text-center">
-                  <Award className="w-10 h-10 text-[var(--maroon-primary)] mx-auto mb-3" />
-                  <h4 className="font-bold">Berkualitas</h4>
-                  <p className="text-sm text-[var(--text-muted)]">Standar kualitas tertinggi</p>
+                <div className="card p-4 sm:p-6 text-center">
+                  <Award className="w-8 h-8 sm:w-10 sm:h-10 text-[var(--maroon-primary)] mx-auto mb-2 sm:mb-3" />
+                  <h4 className="font-bold text-sm sm:text-base">Berkualitas</h4>
+                  <p className="text-xs sm:text-sm text-[var(--text-muted)]">Standar kualitas tertinggi</p>
                 </div>
-                <div className="card p-6 text-center">
-                  <Users className="w-10 h-10 text-[var(--maroon-primary)] mx-auto mb-3" />
-                  <h4 className="font-bold">Profesional</h4>
-                  <p className="text-sm text-[var(--text-muted)]">Tim ahli berpengalaman</p>
+                <div className="card p-4 sm:p-6 text-center">
+                  <Users className="w-8 h-8 sm:w-10 sm:h-10 text-[var(--maroon-primary)] mx-auto mb-2 sm:mb-3" />
+                  <h4 className="font-bold text-sm sm:text-base">Profesional</h4>
+                  <p className="text-xs sm:text-sm text-[var(--text-muted)]">Tim ahli berpengalaman</p>
                 </div>
               </div>
-              <div className="space-y-4 mt-8">
-                <div className="card p-6 text-center">
-                  <CheckCircle className="w-10 h-10 text-[var(--maroon-primary)] mx-auto mb-3" />
-                  <h4 className="font-bold">Terpercaya</h4>
-                  <p className="text-sm text-[var(--text-muted)]">50+ klien puas</p>
+              <div className="space-y-4">
+                <div className="card p-4 sm:p-6 text-center">
+                  <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-[var(--maroon-primary)] mx-auto mb-2 sm:mb-3" />
+                  <h4 className="font-bold text-sm sm:text-base">Terpercaya</h4>
+                  <p className="text-xs sm:text-sm text-[var(--text-muted)]">50+ klien puas</p>
                 </div>
-                <div className="card p-6 text-center">
-                  <Target className="w-10 h-10 text-[var(--maroon-primary)] mx-auto mb-3" />
-                  <h4 className="font-bold">Solusi Tepat</h4>
-                  <p className="text-sm text-[var(--text-muted)]">Sesuai kebutuhan Anda</p>
+                <div className="card p-4 sm:p-6 text-center">
+                  <Target className="w-8 h-8 sm:w-10 sm:h-10 text-[var(--maroon-primary)] mx-auto mb-2 sm:mb-3" />
+                  <h4 className="font-bold text-sm sm:text-base">Solusi Tepat</h4>
+                  <p className="text-xs sm:text-sm text-[var(--text-muted)]">Sesuai kebutuhan Anda</p>
                 </div>
               </div>
             </div>
