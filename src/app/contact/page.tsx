@@ -55,7 +55,7 @@ export default function ContactPage() {
                 <p className="text-sm text-[var(--text-secondary)]">Seluler: {companyInfo.mobile2}</p>
               </div>
               <a
-                href={`https://wa.me/${companyInfo.whatsapp}`}
+                href={`https://wa.me/${companyInfo.whatsapp1}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm text-[#25D366] font-semibold hover:gap-3 transition-all"
