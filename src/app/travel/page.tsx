@@ -1,5 +1,6 @@
 import { Plane, CheckCircle, ArrowRight, Train, Hotel } from "lucide-react";
 import Link from "next/link";
+import { companyInfo } from "@/config/company";
 import { travelCategories, travelPortfolio, travelServices } from "@/data/travel";
 
 export default function TravelPage() {
@@ -134,15 +135,24 @@ export default function TravelPage() {
                 Konsultasi Gratis
                 <ArrowRight size={18} />
               </Link>
-              <a
-                href={`https://wa.me/6282133100565`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-whatsapp justify-center"
-              >
-                Chat WhatsApp
-                <ArrowRight size={18} />
-              </a>
+              <div className="flex flex-col sm:flex-row gap-2">
+                <a
+                  href={`https://wa.me/${companyInfo.whatsapp1}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-whatsapp justify-center text-sm"
+                >
+                  WA Admin 1
+                </a>
+                <a
+                  href={`https://wa.me/${companyInfo.whatsapp2}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-whatsapp justify-center text-sm"
+                >
+                  WA Admin 2
+                </a>
+              </div>
             </div>
           </div>
         </div>

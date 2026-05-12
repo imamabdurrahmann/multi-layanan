@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Package, HardHat, Plane, Shirt, Award, Clock, ThumbsUp, Heart, Shield, ArrowRight, Phone } from "lucide-react";
+import { Package, HardHat, Plane, Shirt, Award, Clock, ThumbsUp, Heart, Shield, ArrowRight } from "lucide-react";
 import { companyInfo } from "@/config/company";
 
 const services = [
@@ -150,15 +150,24 @@ export default function HomePage() {
                 Mulai Proyek Anda
                 <ArrowRight size={18} />
               </Link>
-              <a
-                href={`https://wa.me/${companyInfo.whatsapp1}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-whatsapp inline-flex items-center gap-2 justify-center"
-              >
-                <Phone size={18} />
-                WhatsApp
-              </a>
+              <div className="flex flex-col sm:flex-row gap-2">
+                <a
+                  href={`https://wa.me/${companyInfo.whatsapp1}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-whatsapp inline-flex items-center gap-2 justify-center text-sm"
+                >
+                  WA Admin 1
+                </a>
+                <a
+                  href={`https://wa.me/${companyInfo.whatsapp2}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-whatsapp inline-flex items-center gap-2 justify-center text-sm"
+                >
+                  WA Admin 2
+                </a>
+              </div>
             </div>
           </div>
         </div>

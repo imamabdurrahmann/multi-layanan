@@ -33,7 +33,7 @@ export default function Navbar() {
               priority
             />
           </div>
-          <span className="font-bold text-xl text-[var(--primary)] hidden sm:block">{companyInfo.shortName}</span>
+          <span className="font-bold text-lg text-[var(--primary)] hidden lg:block whitespace-nowrap">{companyInfo.shortName}</span>
         </Link>
 
         <ul className="hidden lg:flex items-center gap-1 flex-nowrap">
