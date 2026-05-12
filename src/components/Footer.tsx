@@ -8,9 +8,9 @@ export default function Footer() {
 
   return (
     <footer className="footer">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto px-6 lg:px-16">
         {/* Main Footer Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 py-12 lg:py-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 pt-16 pb-8">
           {/* Company Info Section */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">

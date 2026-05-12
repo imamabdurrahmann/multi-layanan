@@ -50,8 +50,8 @@ export default function HomePage() {
           <div className="hero-shape hero-shape-3" />
         </div>
 
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full relative z-10">
-          <div className="text-center py-16 md:py-24">
+        <div className="max-w-6xl mx-auto px-6 lg:px-16 w-full relative z-10">
+          <div className="text-center py-20 md:py-32">
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" style={{ fontFamily: "'Poppins', sans-serif" }}>
               {companyInfo.name}
             </h1>
@@ -68,22 +68,23 @@ export default function HomePage() {
 
       {/* SERVICES SECTION */}
       <section className="section bg-[var(--bg-light)]" id="layanan">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-16">
           <div className="section-header">
-            <h2 className="section-title">Layanan Kami</h2>
-            <p className="section-subtitle mx-auto">
+            <span className="text-sm font-semibold tracking-wider text-[var(--primary)] uppercase mb-3 block">Layanan Kami</span>
+            <h2 className="section-title">Solusi Terpadu untuk Kebutuhan Bisnis Anda</h2>
+            <p className="section-subtitle mx-auto mb-10 md:mb-14">
               Kami menyediakan berbagai layanan profesional yang disesuaikan dengan kebutuhan bisnis Anda
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {services.map((service) => (
               <Link href={service.href} key={service.title} className="service-card group">
                 <div className="icon-wrapper group-hover:scale-110 transition-transform duration-300">
                   {service.icon}
                 </div>
-                <h3 className="text-lg font-bold text-[var(--text-dark)] mb-3">{service.title}</h3>
-                <p className="text-sm text-[var(--text-secondary)] mb-4">{service.description}</p>
+                <h3 className="text-lg font-bold text-[var(--text-dark)] mb-4">{service.title}</h3>
+                <p className="text-sm text-[var(--text-secondary)] mb-6">{service.description}</p>
                 <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--primary)] group-hover:gap-2 transition-all">
                   Lihat Detail
                   <ArrowRight size={16} />
@@ -96,10 +97,11 @@ export default function HomePage() {
 
       {/* WHY CHOOSE US SECTION */}
       <section className="section bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-16">
           <div className="section-header">
+            <span className="text-sm font-semibold tracking-wider text-[var(--primary)] uppercase mb-3 block">Keunggulan Kami</span>
             <h2 className="section-title">Kenapa Pilih Kami</h2>
-            <p className="section-subtitle mx-auto">
+            <p className="section-subtitle mx-auto mb-10 md:mb-14">
               Keunggulan yang membedakan kami dari penyedia layanan lainnya
             </p>
           </div>
@@ -119,8 +121,8 @@ export default function HomePage() {
 
       {/* STATS SECTION */}
       <section className="stats-section">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-16">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
             <div className="stat-card">
               <div className="stat-number">{experienceYears}+</div>
               <div className="stat-label">Tahun Pengalaman</div>
@@ -139,10 +141,10 @@ export default function HomePage() {
 
       {/* CTA SECTION */}
       <section className="cta-section">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="cta-content">
-            <h2>Siap Memulai Proyek Anda?</h2>
-            <p>Hubungi kami untuk konsultasi gratis</p>
+        <div className="max-w-6xl mx-auto px-6 lg:px-16">
+          <div className="max-w-2xl mx-auto text-center py-16 md:py-20">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Siap Memulai Proyek Anda?</h2>
+            <p className="text-lg text-white/85 mb-8">Hubungi kami untuk konsultasi gratis</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" className="btn-primary inline-flex items-center gap-2 justify-center">
                 Mulai Proyek Anda

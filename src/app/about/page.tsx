@@ -69,28 +69,30 @@ export default function AboutPage() {
           <div className="hero-shape hero-shape-2" />
           <div className="hero-shape hero-shape-3" />
         </div>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">Tentang Kami</h1>
-          <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto">
-            Solusi pengadaan komprehensif untuk organisasi, perusahaan, dan lembaga di seluruh Indonesia
-          </p>
+        <div className="max-w-6xl mx-auto px-6 lg:px-16 w-full text-center relative z-10">
+          <div className="py-20 md:py-32">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">Tentang Kami</h1>
+            <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto">
+              Solusi pengadaan komprehensif untuk organisasi, perusahaan, dan lembaga di seluruh Indonesia
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Company Overview - New Content from PDF */}
       <section className="section">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-6xl mx-auto px-6 lg:px-16">
+          <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
             <div>
-              <span className="text-sm font-semibold tracking-wider text-[var(--primary)] uppercase">Tentang SPS</span>
-              <h2 className="section-title mt-2">Solusi Terpadu untuk Kebutuhan Bisnis Anda</h2>
-              <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
+              <span className="text-sm font-semibold tracking-wider text-[var(--primary)] uppercase mb-3 block">Tentang SPS</span>
+              <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-dark)] mb-6">Solusi Terpadu untuk Kebutuhan Bisnis Anda</h2>
+              <p className="text-[var(--text-secondary)] leading-relaxed mb-6 text-base">
                 {aboutContent.mainDescription}
               </p>
-              <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
+              <p className="text-[var(--text-secondary)] leading-relaxed mb-6 text-base">
                 {aboutContent.secondaryDescription}
               </p>
-              <p className="text-[var(--text-secondary)] leading-relaxed italic">
+              <p className="text-[var(--text-secondary)] leading-relaxed italic text-base">
                 "{aboutContent.quote}"
               </p>
             </div>
@@ -107,20 +109,20 @@ export default function AboutPage() {
                 <div className="text-lg font-semibold">{companyInfo.shortName}</div>
                 <div className="text-sm text-white/70 mt-2">Since {companyInfo.established}</div>
               </div>
-              <div className="grid grid-cols-2 gap-4 text-center">
-                <div className="bg-white/10 rounded-xl p-4">
+              <div className="grid grid-cols-2 gap-4 md:gap-6 text-center">
+                <div className="bg-white/10 rounded-xl p-6">
                   <div className="text-2xl font-bold">{yearsExperience}+</div>
                   <div className="text-sm text-white/70">Tahun Pengalaman</div>
                 </div>
-                <div className="bg-white/10 rounded-xl p-4">
+                <div className="bg-white/10 rounded-xl p-6">
                   <div className="text-2xl font-bold">50+</div>
                   <div className="text-sm text-white/70">Klien Aktif</div>
                 </div>
-                <div className="bg-white/10 rounded-xl p-4">
+                <div className="bg-white/10 rounded-xl p-6">
                   <div className="text-2xl font-bold">100+</div>
                   <div className="text-sm text-white/70">Proyek Selesai</div>
                 </div>
-                <div className="bg-white/10 rounded-xl p-4">
+                <div className="bg-white/10 rounded-xl p-6">
                   <div className="text-2xl font-bold">4</div>
                   <div className="text-sm text-white/70">Layanan Utama</div>
                 </div>
@@ -132,20 +134,20 @@ export default function AboutPage() {
 
       {/* Vision & Mission - Updated from PDF */}
       <section className="section-alt">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-16">
           <div className="section-header text-center mb-12">
-            <span className="text-sm font-semibold tracking-wider text-[var(--primary)] uppercase">Filosofi Kami</span>
-            <h2 className="section-title mt-2">Visi dan Misi</h2>
+            <span className="text-sm font-semibold tracking-wider text-[var(--primary)] uppercase mb-3 block">Filosofi Kami</span>
+            <h2 className="section-title">Visi dan Misi</h2>
           </div>
 
           {/* Vision */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-[var(--bg-gray)] mb-8">
+          <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-[var(--bg-gray)] mb-8">
             <div className="flex flex-col md:flex-row items-start gap-6">
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--primary)] to-[var(--primary-light)] flex items-center justify-center text-white flex-shrink-0">
                 {visionMission.vision.icon}
               </div>
               <div>
-                <h3 className="text-xl font-bold text-[var(--text-dark)] mb-2">{visionMission.vision.title}</h3>
+                <h3 className="text-xl font-bold text-[var(--text-dark)] mb-4">{visionMission.vision.title}</h3>
                 <p className="text-[var(--text-secondary)] leading-relaxed">{visionMission.vision.description}</p>
               </div>
             </div>
@@ -153,9 +155,9 @@ export default function AboutPage() {
 
           {/* Mission Grid */}
           <h3 className="text-xl font-bold text-[var(--text-dark)] mb-6 text-center">Misi Kami</h3>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             {visionMission.missions.map((mission, index) => (
-              <article key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-[var(--bg-gray)]">
+              <article key={index} className="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-[var(--bg-gray)]">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[var(--primary)] to-[var(--primary-light)] flex items-center justify-center text-white flex-shrink-0">
                     {mission.icon}
@@ -173,13 +175,13 @@ export default function AboutPage() {
 
       {/* Milestones */}
       <section className="section">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-16">
           <div className="section-header">
-            <span className="text-sm font-semibold tracking-wider text-[var(--primary)] uppercase">Perjalanan Kami</span>
-            <h2 className="section-title mt-2">Kilau {companyInfo.name}</h2>
+            <span className="text-sm font-semibold tracking-wider text-[var(--primary)] uppercase mb-3 block">Perjalanan Kami</span>
+            <h2 className="section-title">Kilau {companyInfo.name}</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {milestones.map((m, i) => (
               <article key={i} className="card p-6 flex gap-4">
                 <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[var(--primary)] to-[var(--primary-light)] flex items-center justify-center text-white font-bold flex-shrink-0">
@@ -193,13 +195,13 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="section section-alt">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section className="section-alt">
+        <div className="max-w-6xl mx-auto px-6 lg:px-16">
+          <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
             <div>
-              <span className="text-sm font-semibold tracking-wider text-[var(--primary)] uppercase">Keunggulan Kami</span>
-              <h2 className="section-title mt-2">Mengapa Memilih {companyInfo.name}?</h2>
-              <p className="text-[var(--text-secondary)] mb-8">
+              <span className="text-sm font-semibold tracking-wider text-[var(--primary)] uppercase mb-3 block">Keunggulan Kami</span>
+              <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-dark)] mb-6">Mengapa Memilih {companyInfo.name}?</h2>
+              <p className="text-[var(--text-secondary)] mb-8 text-base">
                 Dengan pengalaman lebih dari {yearsExperience} tahun, kami telah membangun reputasi sebagai mitra bisnis yang dapat diandalkan. Berikut adalah alasan mengapa Anda harus memilih kami:
               </p>
               <ul className="space-y-4">
@@ -213,29 +215,29 @@ export default function AboutPage() {
                 ))}
               </ul>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <div className="card p-4 sm:p-6 text-center">
-                  <Award className="w-8 h-8 sm:w-10 sm:h-10 text-[var(--primary)] mx-auto mb-2 sm:mb-3" />
-                  <h4 className="font-bold text-sm sm:text-base">Berkualitas</h4>
-                  <p className="text-xs sm:text-sm text-[var(--text-muted)]">Standar kualitas tertinggi</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+              <div className="space-y-6">
+                <div className="card p-6 text-center">
+                  <Award className="w-10 h-10 text-[var(--primary)] mx-auto mb-3" />
+                  <h4 className="font-bold text-base mb-2">Berkualitas</h4>
+                  <p className="text-sm text-[var(--text-muted)]">Standar kualitas tertinggi</p>
                 </div>
-                <div className="card p-4 sm:p-6 text-center">
-                  <Users className="w-8 h-8 sm:w-10 sm:h-10 text-[var(--primary)] mx-auto mb-2 sm:mb-3" />
-                  <h4 className="font-bold text-sm sm:text-base">Profesional</h4>
-                  <p className="text-xs sm:text-sm text-[var(--text-muted)]">Tim ahli berpengalaman</p>
+                <div className="card p-6 text-center">
+                  <Users className="w-10 h-10 text-[var(--primary)] mx-auto mb-3" />
+                  <h4 className="font-bold text-base mb-2">Profesional</h4>
+                  <p className="text-sm text-[var(--text-muted)]">Tim ahli berpengalaman</p>
                 </div>
               </div>
-              <div className="space-y-4">
-                <div className="card p-4 sm:p-6 text-center">
-                  <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-[var(--primary)] mx-auto mb-2 sm:mb-3" />
-                  <h4 className="font-bold text-sm sm:text-base">Terpercaya</h4>
-                  <p className="text-xs sm:text-sm text-[var(--text-muted)]">50+ klien puas</p>
+              <div className="space-y-6">
+                <div className="card p-6 text-center">
+                  <CheckCircle className="w-10 h-10 text-[var(--primary)] mx-auto mb-3" />
+                  <h4 className="font-bold text-base mb-2">Terpercaya</h4>
+                  <p className="text-sm text-[var(--text-muted)]">50+ klien puas</p>
                 </div>
-                <div className="card p-4 sm:p-6 text-center">
-                  <Heart className="w-8 h-8 sm:w-10 sm:h-10 text-[var(--primary)] mx-auto mb-2 sm:mb-3" />
-                  <h4 className="font-bold text-sm sm:text-base">Solusi Tepat</h4>
-                  <p className="text-xs sm:text-sm text-[var(--text-muted)]">Sesuai kebutuhan Anda</p>
+                <div className="card p-6 text-center">
+                  <Heart className="w-10 h-10 text-[var(--primary)] mx-auto mb-3" />
+                  <h4 className="font-bold text-base mb-2">Solusi Tepat</h4>
+                  <p className="text-sm text-[var(--text-muted)]">Sesuai kebutuhan Anda</p>
                 </div>
               </div>
             </div>

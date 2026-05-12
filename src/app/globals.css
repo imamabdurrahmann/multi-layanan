@@ -76,6 +76,7 @@ h1, h2, h3, h4, h5, h6 {
   position: sticky;
   top: 0;
   z-index: 100;
+  padding: 1rem 0;
 }
 
 .nav-link {
@@ -103,7 +104,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-section {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   color: white;
-  padding: 6rem 0;
+  padding: 5rem 0;
   position: relative;
   overflow: hidden;
   min-height: 85vh;
@@ -302,11 +303,24 @@ h1, h2, h3, h4, h5, h6 {
 
 /* === Section Styles === */
 .section {
-  padding: 5rem 0;
+  padding: 4rem 0;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 6rem 0;
+  }
 }
 
 .section-alt {
   background: var(--bg-light);
+  padding: 4rem 0;
+}
+
+@media (min-width: 768px) {
+  .section-alt {
+    padding: 6rem 0;
+  }
 }
 
 .section-header {
@@ -491,6 +505,12 @@ h1, h2, h3, h4, h5, h6 {
   padding: 4rem 0;
 }
 
+@media (min-width: 768px) {
+  .stats-section {
+    padding: 5rem 0;
+  }
+}
+
 .stat-card {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
@@ -568,7 +588,7 @@ h1, h2, h3, h4, h5, h6 {
 /* === CTA Section === */
 .cta-section {
   background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
-  padding: 5rem 0;
+  padding: 4rem 0;
   position: relative;
   overflow: hidden;
 }
@@ -654,10 +674,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 2rem;
   }
 
-  .section {
-    padding: 3rem 0;
-  }
-
   .client-logo-grid {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 0.75rem;
@@ -665,5 +681,13 @@ h1, h2, h3, h4, h5, h6 {
 
   .hero-shapes {
     display: none;
+  }
+
+  .cta-section {
+    padding: 3rem 0;
+  }
+
+  .stats-section {
+    padding: 3rem 0;
   }
 }
