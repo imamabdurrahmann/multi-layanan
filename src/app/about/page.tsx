@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Target, Eye, Heart, Award, Users, CheckCircle } from "lucide-react";
 import { companyInfo } from "@/config/company";
 
@@ -73,8 +74,15 @@ export default function AboutPage() {
             </div>
             <div className="bg-gradient-to-br from-[var(--primary)] to-[var(--primary-light)] rounded-3xl p-8 text-white">
               <div className="text-center mb-8">
-                <div className="text-6xl font-bold mb-2">SF</div>
-                <div className="text-lg font-semibold">{companyInfo.name}</div>
+                <div className="w-32 h-32 mx-auto mb-4 relative">
+                  <Image
+                    src="/images/logo.png"
+                    alt={companyInfo.name}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <div className="text-lg font-semibold">{companyInfo.shortName}</div>
                 <div className="text-sm text-white/70 mt-2">Since {companyInfo.established}</div>
               </div>
               <div className="grid grid-cols-2 gap-4 text-center">

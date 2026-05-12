@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin, MessageCircle, ArrowRight } from "lucide-react";
 import { companyInfo } from "@/config/company";
 
@@ -13,12 +14,17 @@ export default function Footer() {
           {/* Company Info Section */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[var(--gold-primary)] to-[var(--gold-dark)] flex items-center justify-center shadow-lg">
-                <span className="text-[var(--maroon-dark)] font-black text-lg">SF</span>
+              <div className="w-16 h-16 relative flex-shrink-0">
+                <Image
+                  src="/images/logo.png"
+                  alt={companyInfo.name}
+                  fill
+                  className="object-contain"
+                />
               </div>
               <div>
-                <h3 className="font-bold text-white leading-tight">{companyInfo.name}</h3>
-                <p className="text-sm text-[var(--gold-primary)]">{companyInfo.tagline}</p>
+                <h3 className="font-bold text-white leading-tight text-sm lg:text-base">{companyInfo.name}</h3>
+                <p className="text-sm text-[var(--gold)]">{companyInfo.tagline}</p>
               </div>
             </div>
             <p className="text-white/70 text-sm leading-relaxed mb-6">
@@ -50,13 +56,13 @@ export default function Footer() {
           {/* Contact Section */}
           <div>
             <h4 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-              <span className="w-1.5 h-6 bg-[var(--gold-primary)] rounded-full"></span>
+              <span className="w-1.5 h-6 bg-[var(--gold)] rounded-full"></span>
               Kontak Kami
             </h4>
             <ul className="space-y-3">
               <li>
-                <a href={`tel:${companyInfo.phone}`} className="flex items-start gap-3 text-white/70 hover:text-[var(--gold-primary)] transition-colors group">
-                  <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--gold-primary)]/20 transition-colors">
+                <a href={`tel:${companyInfo.phone}`} className="flex items-start gap-3 text-white/70 hover:text-[var(--gold)] transition-colors group">
+                  <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--gold)]/20 transition-colors">
                     <MessageCircle size={16} />
                   </div>
                   <div>
@@ -66,8 +72,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href={`https://wa.me/${companyInfo.whatsapp}`} target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-white/70 hover:text-[var(--gold-primary)] transition-colors group">
-                  <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--gold-primary)]/20 transition-colors">
+                <a href={`https://wa.me/${companyInfo.whatsapp}`} target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-white/70 hover:text-[var(--gold)] transition-colors group">
+                  <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--gold)]/20 transition-colors">
                     <MessageCircle size={16} />
                   </div>
                   <div>
@@ -78,8 +84,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href={`mailto:${companyInfo.email}`} className="flex items-start gap-3 text-white/70 hover:text-[var(--gold-primary)] transition-colors group">
-                  <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--gold-primary)]/20 transition-colors">
+                <a href={`mailto:${companyInfo.email}`} className="flex items-start gap-3 text-white/70 hover:text-[var(--gold)] transition-colors group">
+                  <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--gold)]/20 transition-colors">
                     <Mail size={16} />
                   </div>
                   <div>
@@ -104,7 +110,7 @@ export default function Footer() {
           {/* Quick Links Section */}
           <div>
             <h4 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-              <span className="w-1.5 h-6 bg-[var(--gold-primary)] rounded-full"></span>
+              <span className="w-1.5 h-6 bg-[var(--gold)] rounded-full"></span>
               Tautan Cepat
             </h4>
             <ul className="space-y-2">
@@ -112,7 +118,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="flex items-center gap-2 text-white/70 hover:text-[var(--gold-primary)] hover:translate-x-1 transition-all duration-300"
+                    className="flex items-center gap-2 text-white/70 hover:text-[var(--gold)] hover:translate-x-1 transition-all duration-300"
                   >
                     <ArrowRight size={14} className="opacity-0 group-hover:opacity-100" />
                     <span>{link.label}</span>
@@ -125,7 +131,7 @@ export default function Footer() {
           {/* Social Media Links Section */}
           <div>
             <h4 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-              <span className="w-1.5 h-6 bg-[var(--gold-primary)] rounded-full"></span>
+              <span className="w-1.5 h-6 bg-[var(--gold)] rounded-full"></span>
               Media Sosial
             </h4>
             <div className="space-y-4">
