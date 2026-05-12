@@ -16,7 +16,9 @@ export const metadata: Metadata = {
   keywords: "pengadaan barang, konstruksi, travel, laundry, PT Sunfelix",
   icons: {
     icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
@@ -26,6 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id">
+      <head>
+        <meta name="theme-color" content="#1E3A5F" />
+      </head>
       <body className={`${inter.variable} min-h-full flex flex-col antialiased`}>
         <Navbar />
         <main className="flex-1">{children}</main>
