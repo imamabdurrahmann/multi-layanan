@@ -149,7 +149,7 @@ export default function HomePage() {
                 <ArrowRight size={18} />
               </Link>
               <a
-                href={`https://wa.me/${companyInfo.whatsapp}`}
+                href={`https://wa.me/${companyInfo.whatsapp1}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-whatsapp inline-flex items-center gap-2 justify-center"

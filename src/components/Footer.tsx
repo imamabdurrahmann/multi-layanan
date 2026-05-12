@@ -72,7 +72,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href={`https://wa.me/${companyInfo.whatsapp}`} target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-white/70 hover:text-[var(--gold)] transition-colors group">
+                <a href={`https://wa.me/${companyInfo.whatsapp1}`} target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-white/70 hover:text-[var(--gold)] transition-colors group">
                   <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--gold)]/20 transition-colors">
                     <MessageCircle size={16} />
                   </div>
