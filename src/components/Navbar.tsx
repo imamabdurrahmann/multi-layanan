@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -9,6 +9,15 @@ import { navLinks, companyInfo } from "@/config/company";
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
+
+  // Tutup menu saat scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      if (mobileOpen) setMobileOpen(false);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [mobileOpen]);
 
   return (
     <header className="header">
@@ -47,7 +56,13 @@ export default function Navbar() {
         </button>
       </nav>
 
-      <div id="mobile-menu" className="lg:hidden bg-white border-t border-[var(--bg-gray)]">
+      {/* Mobile Menu - Hidden by default, only shows when open */}
+      <div
+        id="mobile-menu"
+        className={`lg:hidden fixed top-16 left-0 w-full bg-white shadow-lg border-t border-[var(--bg-gray)] z-50 transition-all duration-300 ${
+          mobileOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+      >
         <ul className="px-4 py-4 space-y-2">
           {navLinks.map((link) => (
             <li key={link.href}>
