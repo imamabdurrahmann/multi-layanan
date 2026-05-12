@@ -22,8 +22,8 @@ export default function Navbar() {
 
   return (
     <header className="header">
-      <nav className="max-w-6xl mx-auto px-6 lg:px-16 flex justify-between items-center h-16">
-        <Link href="/" className="flex items-center gap-3">
+      <nav className="max-w-6xl mx-auto px-6 lg:px-16 flex justify-between items-center h-16 gap-4 lg:gap-8">
+        <Link href="/" className="flex items-center gap-3 flex-shrink-0">
           <div className="w-11 h-11 relative">
             <Image
               src="/images/logo.png"
