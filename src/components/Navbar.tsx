@@ -1,7 +1,5 @@
 "use client";
 
-"use client";
-
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -38,14 +36,14 @@ export default function Navbar() {
           <span className="font-bold text-xl text-[var(--primary)] hidden sm:block">{companyInfo.shortName}</span>
         </Link>
 
-        <ul className="hidden lg:flex gap-1">
+        <ul className="hidden lg:flex items-center gap-1 flex-nowrap">
           {navLinks.map((link) => {
             const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
             return (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`nav-link ${isActive ? "active" : ""}`}
+                  className={`nav-link whitespace-nowrap ${isActive ? "active" : ""}`}
                 >
                   {link.label}
                 </Link>
