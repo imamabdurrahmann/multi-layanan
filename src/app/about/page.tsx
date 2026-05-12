@@ -1,24 +1,43 @@
 import Image from "next/image";
-import { Target, Eye, Heart, Award, Users, CheckCircle } from "lucide-react";
+import { Target, Eye, Heart, Award, Users, CheckCircle, Sparkles, Shield, Handshake } from "lucide-react";
 import { companyInfo } from "@/config/company";
 
-const visionValues = [
-  {
-    icon: <Target className="w-6 h-6" />,
+const visionMission = {
+  vision: {
     title: "Visi",
-    description: "Menjadi perusahaan solusi bisnis terdepan yang memberikan nilai tambah bagi setiap klien dengan layanan berkualitas dan terpercaya.",
+    icon: <Eye className="w-7 h-7" />,
+    description: "Menjadi perusahaan yang kreatif, profesional, dan terpercaya dalam menyediakan solusi komprehensif bagi berbagai kebutuhan organisasi, serta menjadi mitra strategis yang tumbuh bersama klien di tingkat nasional maupun global.",
   },
-  {
-    icon: <Eye className="w-6 h-6" />,
-    title: "Misi",
-    description: "Memberikan layanan pengadaan, konstruksi, travel, dan laundry dengan standar tertinggi untuk memenuhi kebutuhan bisnis klien.",
-  },
-  {
-    icon: <Heart className="w-6 h-6" />,
-    title: "Nilai",
-    description: "Integritas, profesionalisme, dan inovasi menjadi landasan kami dalam setiap layanan yang diberikan.",
-  },
-];
+  missions: [
+    {
+      icon: <Sparkles className="w-6 h-6" />,
+      title: "Memberikan Solusi Terbaik",
+      description: "Menyediakan produk dan layanan yang beragam dengan kualitas unggul sesuai kebutuhan.",
+    },
+    {
+      icon: <Shield className="w-6 h-6" />,
+      title: "Menjunjung Integritas dan Profesionalisme",
+      description: "Menjalankan setiap proses bisnis dengan transparansi, kejujuran, dan komitmen terhadap standar kerja yang tinggi.",
+    },
+    {
+      icon: <Target className="w-6 h-6" />,
+      title: "Mendorong Inovasi dan Efisiensi",
+      description: "Menghadirkan pendekatan kreatif dan adaptif untuk meningkatkan efektivitas serta nilai tambah bagi klien.",
+    },
+    {
+      icon: <Handshake className="w-6 h-6" />,
+      title: "Membangun Kemitraan Jangka Panjang",
+      description: "Menjalin hubungan kerja sama yang saling menguntungkan, berkelanjutan, dan berorientasi pada pertumbuhan bersama.",
+    },
+  ],
+};
+
+const aboutContent = {
+  title: "Tentang SPS",
+  mainDescription: `${companyInfo.name} Indonesia hadir dengan semangat muda, kreatif, dan profesional untuk memberikan solusi pengadaan terbaik bagi berbagai kebutuhan perusahaan hingga kementerian dan lembaga. Kami bergerak di beragam bidang pengadaan, mulai dari baju seragam, peralatan kantor, perlengkapan pekerjaan, hingga proyek pengadaan berskala besar.`,
+  secondaryDescription: "Dengan komitmen pada kualitas, ketepatan waktu, dan pelayanan yang berorientasi pada kepuasan klien, kami menjadi mitra strategis bagi perusahaan, perkantoran, kementerian, serta lembaga lainnya. Setiap produk dan layanan yang kami tawarkan dirancang untuk mendukung kelancaran operasional dan meningkatkan citra profesional organisasi Anda.",
+  quote: "Kami percaya bahwa pengadaan bukan sekadar menyediakan barang, tetapi juga menghadirkan nilai tambah melalui efisiensi, inovasi, dan kepercayaan. Oleh karena itu, Sunfelix Prima Solusi senantiasa berupaya menjadi mitra yang dapat diandalkan.",
+};
 
 const milestones = [
   { year: "2012", event: "PT Sunfelix Prima Solusi didirikan di Bengkulu" },
@@ -53,23 +72,26 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full text-center relative z-10">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">Tentang Kami</h1>
           <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto">
-            Didirikan tahun 2012 di Bengkulu, {companyInfo.name} adalah perusahaan solusi bisnis terpercaya yang menyediakan layanan pengadaan barang, konstruksi, travel, dan laundry untuk kebutuhan bisnis Anda.
+            Solusi pengadaan komprehensif untuk organisasi, perusahaan, dan lembaga di seluruh Indonesia
           </p>
         </div>
       </section>
 
-      {/* Company Overview */}
+      {/* Company Overview - New Content from PDF */}
       <section className="section">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="text-sm font-semibold tracking-wider text-[var(--primary)] uppercase">Tentang {companyInfo.name}</span>
+              <span className="text-sm font-semibold tracking-wider text-[var(--primary)] uppercase">Tentang SPS</span>
               <h2 className="section-title mt-2">Solusi Terpadu untuk Kebutuhan Bisnis Anda</h2>
-              <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
-                Didirikan pada tahun {companyInfo.established}, {companyInfo.name} telah berkembang menjadi perusahaan solusi bisnis terpercaya di Indonesia. Dengan pengalaman lebih dari {yearsExperience} tahun, kami berkomitmen untuk memberikan layanan berkualitas tinggi yang disesuaikan dengan kebutuhan setiap klien.
+              <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
+                {aboutContent.mainDescription}
               </p>
-              <p className="text-[var(--text-secondary)] leading-relaxed">
-                Visi kami adalah menjadi mitra bisnis yang dapat diandalkan dalam setiap aspek operasional bisnis Anda. Melalui layanan pengadaan barang, konstruksi, travel, dan laundry, kami siap membantu bisnis Anda berkembang lebih efisien dan profesional.
+              <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
+                {aboutContent.secondaryDescription}
+              </p>
+              <p className="text-[var(--text-secondary)] leading-relaxed italic">
+                "{aboutContent.quote}"
               </p>
             </div>
             <div className="bg-gradient-to-br from-[var(--primary)] to-[var(--primary-light)] rounded-3xl p-8 text-white">
@@ -108,33 +130,41 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Quote Section */}
-      <section className="section-alt py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <div className="text-6xl text-[var(--primary-light)] mb-6">"</div>
-          <blockquote className="text-xl sm:text-2xl md:text-3xl font-medium text-[var(--text-dark)] leading-relaxed mb-6">
-            Kepercayaan klien adalah aset berharga yang kami jaga dengan sepenuh hati melalui dedikasi dan kualitas layanan terbaik.
-          </blockquote>
-          <cite className="text-[var(--primary)] font-semibold">— Manajemen {companyInfo.name}</cite>
-        </div>
-      </section>
-
-      {/* Vision, Mission, Values */}
-      <section className="section">
+      {/* Vision & Mission - Updated from PDF */}
+      <section className="section-alt">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="section-header">
+          <div className="section-header text-center mb-12">
             <span className="text-sm font-semibold tracking-wider text-[var(--primary)] uppercase">Filosofi Kami</span>
-            <h2 className="section-title mt-2">Visi, Misi, dan Nilai</h2>
+            <h2 className="section-title mt-2">Visi dan Misi</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {visionValues.map((item) => (
-              <article key={item.title} className="card p-8 text-center">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--primary)] to-[var(--primary-light)] flex items-center justify-center text-white mx-auto mb-6">
-                  {item.icon}
+          {/* Vision */}
+          <div className="bg-white rounded-2xl p-8 shadow-lg border border-[var(--bg-gray)] mb-8">
+            <div className="flex flex-col md:flex-row items-start gap-6">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--primary)] to-[var(--primary-light)] flex items-center justify-center text-white flex-shrink-0">
+                {visionMission.vision.icon}
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-[var(--text-dark)] mb-2">{visionMission.vision.title}</h3>
+                <p className="text-[var(--text-secondary)] leading-relaxed">{visionMission.vision.description}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Mission Grid */}
+          <h3 className="text-xl font-bold text-[var(--text-dark)] mb-6 text-center">Misi Kami</h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            {visionMission.missions.map((mission, index) => (
+              <article key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-[var(--bg-gray)]">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[var(--primary)] to-[var(--primary-light)] flex items-center justify-center text-white flex-shrink-0">
+                    {mission.icon}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[var(--text-dark)] mb-2">{mission.title}</h4>
+                    <p className="text-sm text-[var(--text-secondary)]">{mission.description}</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-[var(--text-dark)] mb-3">{item.title}</h3>
-                <p className="text-[var(--text-secondary)]">{item.description}</p>
               </article>
             ))}
           </div>
@@ -142,7 +172,7 @@ export default function AboutPage() {
       </section>
 
       {/* Milestones */}
-      <section className="section section-alt">
+      <section className="section">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="section-header">
             <span className="text-sm font-semibold tracking-wider text-[var(--primary)] uppercase">Perjalanan Kami</span>
@@ -163,7 +193,7 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="section">
+      <section className="section section-alt">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -203,7 +233,7 @@ export default function AboutPage() {
                   <p className="text-xs sm:text-sm text-[var(--text-muted)]">50+ klien puas</p>
                 </div>
                 <div className="card p-4 sm:p-6 text-center">
-                  <Target className="w-8 h-8 sm:w-10 sm:h-10 text-[var(--primary)] mx-auto mb-2 sm:mb-3" />
+                  <Heart className="w-8 h-8 sm:w-10 sm:h-10 text-[var(--primary)] mx-auto mb-2 sm:mb-3" />
                   <h4 className="font-bold text-sm sm:text-base">Solusi Tepat</h4>
                   <p className="text-xs sm:text-sm text-[var(--text-muted)]">Sesuai kebutuhan Anda</p>
                 </div>
