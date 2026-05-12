@@ -87,12 +87,12 @@ export default function HomePage() {
                 {companyInfo.name} menyediakan layanan pengadaan barang, konstruksi, travel, dan laundry untuk membantu bisnis Anda berkembang dengan efisien dan profesional.
               </p>
 
-              <div className="flex flex-wrap gap-4">
-                <Link href="/contact" className="btn-primary group">
-                  Hubungi Kami
+              <div className="flex flex-col gap-4 w-full sm:flex-row sm:w-auto">
+                <Link href="/contact" className="btn-primary group w-full sm:w-auto justify-center">
+                  Konsultasi Sekarang
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link href="/about" className="btn-secondary">
+                <Link href="/about" className="btn-secondary w-full sm:w-auto justify-center text-center">
                   Pelajari Lebih Lanjut
                 </Link>
               </div>
@@ -214,8 +214,8 @@ export default function HomePage() {
                   <span>{companyInfo.address}, {companyInfo.city}</span>
                 </div>
               </div>
-              <Link href="/contact" className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-white text-[var(--maroon-primary)] font-semibold rounded-lg hover:bg-white/90 transition-colors">
-                Hubungi Kami
+              <Link href="/contact" className="mt-6 inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[var(--maroon-primary)] font-semibold rounded-lg hover:bg-white/90 transition-colors w-full sm:w-auto">
+                Tanya Tim Sales
                 <ArrowRight size={18} />
               </Link>
             </div>
@@ -251,12 +251,12 @@ export default function HomePage() {
           <p className="text-white/80 mb-8 max-w-2xl mx-auto">
             Hubungi tim kami sekarang untuk konsultasi gratis dan penawaran terbaik untuk kebutuhan bisnis Anda.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/contact" className="btn-primary">
-              Hubungi Sekarang
+          <div className="flex flex-col gap-3 w-full px-4 sm:flex-row sm:justify-center sm:w-auto">
+            <Link href="/contact" className="btn-primary w-full sm:w-auto justify-center">
+              Mulai Proyek Anda
               <ArrowRight size={18} />
             </Link>
-            <a href={`https://wa.me/${companyInfo.whatsapp}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] text-white font-semibold rounded-lg hover:bg-[#20bd5a] transition-colors">
+            <a href={`https://wa.me/${companyInfo.whatsapp}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] text-white font-semibold rounded-lg hover:bg-[#20bd5a] transition-colors w-full sm:w-auto">
               <Phone size={18} />
               Chat WhatsApp
             </a>
