@@ -92,7 +92,7 @@ export default function KonstruksiPage() {
           </p>
           <div className="flex flex-col gap-3 w-full sm:flex-row sm:justify-center sm:w-auto">
             <Link href="/contact" className="btn-primary w-full sm:w-auto justify-center">
-              Konsultasi Sekarang
+              Diskusikan Proyek
               <ArrowRight size={18} />
             </Link>
           </div>
