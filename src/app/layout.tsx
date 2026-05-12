@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: "PT Sunfelix | Solusi Bisnis Terpercaya",
   description: "PT Sunfelix menyediakan layanan pengadaan barang, konstruksi, travel, dan laundry untuk kebutuhan bisnis Anda.",
   keywords: "pengadaan barang, konstruksi, travel, laundry, PT Sunfelix",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
